@@ -16,6 +16,7 @@
     "@electron-forge/maker-deb": "^7.4.0",
     "@electron-forge/maker-rpm": "^7.4.0",
     "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-dmg": "^7.4.0",
     "@electron-forge/maker-zip": "^7.4.0",
     "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
     "@electron-forge/plugin-fuses": "^7.4.0",
@@ -38,5 +39,53 @@
   "license": "MIT",
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0"
+  },
+  "config": {
+    "forge": {
+      "makers": [
+        {
+            "name": "@electron-forge/maker-squirrel",
+            "config": {
+              "name": "TestApp"
+            }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "windows"
+          ],
+          "config": {
+            "name": "TestApp"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-dmg",
+          "platforms": [
+            "darwin"
+          ],
+          "config": {
+            "name": "TestApp"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "platforms": [
+            "linux"
+          ],
+          "config": {
+            "name": "TestApp"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "platforms": [
+            "linux"
+          ],
+          "config": {
+            "name": "TestApp"
+          }
+        }
+      ]
+    }
   }
 }
